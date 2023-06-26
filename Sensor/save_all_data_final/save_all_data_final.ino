@@ -21,10 +21,23 @@ DHT dht(DHTPIN, DHTTYPE);
 #define WIFI_PASSWORD  "12345678"
 #endif
 
-String hum = "";
-String temp = "";
+
+
+// Variables
+String hum = "";      
+String temp = "";     
+String gasLevel = ""; 
+String pressure = "";
+String altitude = "";
+String date = "";    
+String timestamp = "";    
+String latitude = ""; 
+String longitude = ""; 
 String data = "";
 int _mode = -1; // 0 check for rfid, 1 check pin
+
+
+
 
 // function to delimit the string
 String delimit_string(String data, char separator, int index)
@@ -70,26 +83,42 @@ void loop() {
   //  Serial.print(temperature);
   //  Serial.println(" *C");
 
-  if ((WiFi.status() == WL_CONNECTED)) {
+if ((WiFi.status() == WL_CONNECTED)) {
     WiFiClient client;
     if (Serial.available()) {
       if (Serial.read() == '#') {
         String data = Serial.readStringUntil('\n');
-        String  hum = delimit_string(data, ',', 0);
-        String  temp = delimit_string(data, ',', 1);
-        String  soil = delimit_string(data, ',', 2);
-        String  gas = delimit_string(data, ',', 3);
-        Serial.print("HUM: ");
-        Serial.print(hum);
-        Serial.print("TEMP: ");
-        Serial.print(temp);
-        Serial.print("SOIL: ");
-        Serial.print(soil);
-        Serial.print("GAS: ");
-        Serial.println(gas);
+        String hum = delimit_string(data, ',', 0);
+        String temp = delimit_string(data, ',', 1);
+        String gasLevel = delimit_string(data, ',', 2);
+        String pressure = delimit_string(data, ',', 3);
+        String altitude = delimit_string(data, ',', 4);
+        String date = delimit_string(data, ',', 5);    
+        String timestamp = delimit_string(data, ',', 6);    
+        String latitude = delimit_string(data, ',', 7);
+        String longitude = delimit_string(data, ',', 8); 
 
+        Serial.print(hum);
+        Serial.print(",");
+        Serial.print(temp);
+        Serial.print(",");
+        Serial.print(gasLevel);
+        Serial.print(",");
+        Serial.print(pressure);
+        Serial.print(",");
+        Serial.print(altitude);
+        Serial.print(",");
+        Serial.print(date);
+        Serial.print(",");
+        Serial.print(time);
+        Serial.print(",");
+        Serial.print(latitude, 6);
+        Serial.print(",");
+        Serial.println(longitude, 6);
       }
     }
+
+
     //    HTTPClient http;
     //    String toSend = "http://" SERVER_IP ":" PORT "/api/data/";
     //    toSend += String(humidity) + "/"+ String(temperature);
@@ -107,18 +136,4 @@ void loop() {
   }
 
   delay(5000);
-
-  //   // put your main code here, to run repeatedly:
-  //  if (Serial.available()) {
-  //    if (Serial.read() == '#') {
-  //      Serial.print("hello");
-  //      data = Serial.readStringUntil('\n');
-  //      _mode = delimit_string(data, ',', 0).toFloat();
-  //      if (_mode == 0.0F) {
-  //        hum = delimit_string(data, ',', 1);
-  //        hum.trim();
-  //
-  //      }
-  //    }
-  //  }
 }
