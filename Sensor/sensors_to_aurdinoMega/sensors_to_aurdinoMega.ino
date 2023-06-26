@@ -27,8 +27,6 @@ float temperature;
 float humidity;
 float gasLevel;
 float pressure;
-float latitude;
-float longitude;
 
 void setup() {
   // Initialize serial communication
@@ -63,18 +61,31 @@ void loop() {
   while (gpsSerial.available() > 0) {
     if (gps.encode(gpsSerial.read())) {
       if (gps.location.isValid()) {
-        // Send sensor data to NodeMCU
-        String sensorData = "Temperature:" + String(temperature) +
-                            ",Humidity:" + String(humidity) +
-                            ",Gas Level:" + String(gasLevel) +
-                            ",Pressure:" + String(pressure) +
-                            ",Latitude:" + String(gps.location.lat(), 6) +
-                            ",Longitude:" + String(gps.location.lng(), 6);
+        // Print sensor and GPS data to Serial Monitor
+        Serial.print("Temperature: ");
+        Serial.print(temperature);
+        Serial.print(" °C\t");
 
-        Serial.println(sensorData); // Send the sensor data to NodeMCU
+        Serial.print("Humidity: ");
+        Serial.print(humidity);
+        Serial.print(" %\t");
 
-        delay(2000); // Delay for 2 seconds between readings
+        Serial.print("Gas Level: ");
+        Serial.print(gasLevel);
+        Serial.print(" %\t");
+
+        Serial.print("Pressure: ");
+        Serial.print(pressure);
+        Serial.print(" hPa\t");
+
+        Serial.print("Latitude: ");
+        Serial.print(gps.location.lat(), 6);
+        Serial.print("\tLongitude: ");
+        Serial.print(gps.location.lng(), 6);
+        Serial.println();
       }
     }
   }
+
+  delay(2000); // Delay for 2 seconds between readings
 }
