@@ -53,7 +53,7 @@ void loop() {
   altitude = bmp.readAltitude();
 
   // Print data to Serial monitor
-  Serial.print("#");
+//  Serial.print("#");
   Serial.print(hum);
   Serial.print(",");
   Serial.print(temp);
@@ -64,5 +64,5 @@ void loop() {
   Serial.print(",");
   Serial.println(altitude);
 
-  delay(1000); // Delay for 1 second before reading again
+  delay(20000); // Delay for 1 second before reading again
 }

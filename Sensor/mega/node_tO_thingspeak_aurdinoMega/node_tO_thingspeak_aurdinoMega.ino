@@ -88,7 +88,7 @@ void loop() {
   }
 
   // Wait for 20 seconds before sending the next set of data
-  delay(10000);
+  delay(20000);
 }
 
 
