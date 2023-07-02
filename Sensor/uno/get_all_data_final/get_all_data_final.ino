@@ -25,7 +25,7 @@ float gasLevel; // Stores gas level value
 float pressure; // Stores pressure value
 float altitude; // Stores altitude value
 String date;    // Stores date value
-String time;    // Stores time value
+String timestamp;    // Stores timestamp value
 float latitude; // Stores latitude value
 float longitude; // Stores longitude value
 
@@ -42,7 +42,7 @@ void setup() {
     while (1);
   }
 
-  Serial.println("Humidity, Temperatuew,Gas Level,Pressure,Altitude,Date,Time,Latitude,Longitude");
+  Serial.println("Humidity, Temperatuew,Gas Level,Pressure,Altitude,Date,timestamp,Latitude,Longitude");
 
   // Initialize GPS module communication
   ss.begin(115200);
@@ -69,19 +69,19 @@ void loop() {
         longitude = gps.location.lng();
         latitude = gps.location.lat();
       }
-      // Check if valid date and time data is available
+      // Check if valid date and timestamp data is available
       if (gps.date.isValid() && gps.time.isValid()) {
-        // Store date and time values in variables
-        date = String(gps.date.year()) + "-" + String(gps.date.month()) + "-" + String(gps.date.day());
-        time = String(gps.time.hour()) + ":" + String(gps.time.minute()) + ":" + String(gps.time.second());
+        // Store date and timestamp values in variables
+        date = String(gps.date.year()) + "." + String(gps.date.month()) + "." + String(gps.date.day());
+        timestamp = String(gps.time.hour()) + "." + String(gps.time.minute()) + "." + String(gps.time.second());
       }
     }
   }
 
   // If no GPS data is available, use static values
-  if (date.length() == 0 || time.length() == 0 || latitude == 0.0 || longitude == 0.0) {
-    date = "2023-06-25";
-    time = "12:00:00";
+  if (date.length() == 0 || timestamp.length() == 0 || latitude == 0.0 || longitude == 0.0) {
+    date = "2023.06.25";
+    timestamp = "12.00.00";
     latitude = 27.70626495563062;
     longitude = 85.3299995345307;
   }
@@ -100,11 +100,11 @@ void loop() {
   Serial.print(",");
   Serial.print(date);
   Serial.print(",");
-  Serial.print(time);
+  Serial.print(timestamp);
   Serial.print(",");
   Serial.print(latitude, 6);
   Serial.print(",");
   Serial.println(longitude, 6);
 
-  delay(20000); // Delay for 1 second before reading again
+  delay(2000); // Delay for 1 second before reading again
 }
