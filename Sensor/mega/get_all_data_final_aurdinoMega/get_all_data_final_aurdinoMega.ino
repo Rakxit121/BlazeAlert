@@ -21,6 +21,10 @@ float temp;     // Stores temperature value
 float gasLevel; // Stores gas level value
 float pressure; // Stores pressure value
 float altitude; // Stores altitude value
+String date;    // Stores date value
+String timestamp;    // Stores timestamp value
+float latitude; // Stores latitude value
+float longitude; // Stores longitude value
 
 void setup() {
   // Initialize Serial communication
@@ -52,8 +56,18 @@ void loop() {
   pressure = bmp.readPressure();
   altitude = bmp.readAltitude();
 
+  latitude = 0.0;
+  longitude = 0.0;
+
+    if (date.length() == 0 || timestamp.length() == 0 || latitude == 0.0 || longitude == 0.0) {
+    date = "2023.06.25";
+    timestamp = "12.00.00";
+    latitude = 27.70626495563062;
+    longitude = 85.3299995345307;
+  }
+
   // Print data to Serial monitor
-//  Serial.print("#");
+  Serial.print("#");
   Serial.print(hum);
   Serial.print(",");
   Serial.print(temp);
@@ -63,6 +77,14 @@ void loop() {
   Serial.print(pressure);
   Serial.print(",");
   Serial.println(altitude);
+  Serial.print(",");
+  Serial.print(date);
+  Serial.print(",");
+  Serial.print(timestamp);
+  Serial.print(",");
+  Serial.print(latitude, 6);
+  Serial.print(",");
+  Serial.println(longitude, 6);
 
-  delay(20000); // Delay for 1 second before reading again
+  delay(1000); // Delay for 1 second before reading again
 }

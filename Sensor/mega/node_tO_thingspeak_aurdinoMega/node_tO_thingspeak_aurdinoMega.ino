@@ -12,6 +12,10 @@ float temperature = 0.0;
 int gasLevel = 0;
 float pressure = 0.0;
 float altitude = 0.0;
+String date = "";
+String timestamp = "";
+float longitude = 0.0;
+float latitude = 0.0;
 
 WiFiClient client;
 
@@ -53,6 +57,10 @@ void parseData(String receivedData) {
   gasLevel = delimit_string(receivedData, ',', 2).toInt();
   pressure = delimit_string(receivedData, ',', 3).toFloat();
   altitude = delimit_string(receivedData, ',', 4).toFloat();
+  date = delimit_string(receivedData, ',', 5);
+  timestamp = delimit_string(receivedData, ',', 6);
+  longitude = delimit_string(receivedData, ',', 7).toFloat();
+  latitude = delimit_string(receivedData, ',', 8).toFloat();
 }
 
 void loop() {
@@ -74,6 +82,10 @@ void loop() {
     ThingSpeak.setField(3, String(gasLevel));
     ThingSpeak.setField(4, String(pressure));
     ThingSpeak.setField(5, String(altitude));
+    ThingSpeak.setField(6, date);
+    ThingSpeak.setField(7, timestamp);
+    ThingSpeak.setField(8, String(longitude));
+    ThingSpeak.setField(9, String(latitude));
 
     // Write the data to ThingSpeak
     int response = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
@@ -88,7 +100,7 @@ void loop() {
   }
 
   // Wait for 20 seconds before sending the next set of data
-  delay(20000);
+  delay(10000);
 }
 
 
