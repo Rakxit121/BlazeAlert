@@ -106,5 +106,5 @@ void loop() {
   Serial.print(",");
   Serial.println(longitude, 6);
 
-  delay(2000); // Delay for 1 second before reading again
+  delay(20000); // Delay for 1 second before reading again
 }

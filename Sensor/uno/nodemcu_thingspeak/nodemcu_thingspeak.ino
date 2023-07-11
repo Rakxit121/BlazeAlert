@@ -106,7 +106,7 @@ void loop() {
   }
 
   // Wait for 10 seconds before reading the next set of data
-  delay(20000);
+  delay(1000);
 }
 
 
