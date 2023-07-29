@@ -144,7 +144,7 @@ section {
 }
 .gap {
   float: left;
-  padding: 100px 0;
+  padding: 75px 0;
   position: relative;
   width: 100%;
 }
@@ -576,7 +576,8 @@ nav > div ul {
 nav > div > ul {
   padding-left: 0;
   list-style: none;
-  margin-bottom: 0;
+  margin-bottom: -30px;
+  margin-right: -80px;
   float: left;
   width: auto;
 }
@@ -593,8 +594,10 @@ nav > div > ul > li {
   width: auto;
   font-size: 16px;
   color: #fff;
+  margin-top: -20px;
 }
-nav > div > ul > li + li {margin-left: 10px;}
+nav > div > ul > li + li {margin-left: 10px;
+margin-top: -20px;}
 nav > div > ul li a {
   position: relative;
   display: inline-block;
@@ -3374,7 +3377,12 @@ blockquote p i.bt-qt {
 	display:none;
 }
 .logo img {
-    width: 80%;
+    width: 95%;
+    margin-top: -15px;
+    margin-bottom: 5px;
+    margin-left: -90px;
+
+    
 }
 .logo {
     display: inline-block;
@@ -3563,7 +3571,7 @@ nav ul li i {
     color: #8f8f8f;
 }
 footer .gap {
-    padding: 70px 0px;
+    padding: 0px 0px;
 }
 /*===== Featured Area Style 2 =====*/
 .featured-area-wrap {
@@ -3641,4 +3649,24 @@ footer .gap {
 }
 .featured-cap {
     max-width: 700px;
+}
+
+.mdc-card {
+  /* background: $mdc-card-bg;
+  padding: $mdc-card-padding;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
+  border-radius: 2px; */
+  .card-title {
+    font-size: 20px;
+    margin-bottom: 6px;
+    font-weight: normal;
+    @media(max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+  .card-sub-title {
+    font-size: 14px;
+    font-weight: 300;
+  }
 }

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="refresh" content="35">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>BlazeAlert - Fire Detection System</title>
+
+    <link rel="stylesheet" href="assets/css/icons.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+	
+	<link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+
+
+    <style>
+        #map {
+            height: 400px;
+        }
+    </style>
+
+</head>
+<body itemscope>
+    <!-- <div class="preloader">
+        <div class="loader-inner ball-scale-multiple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>Preloader -->
+    <main>
+        <header class="stick">
+         
+            <div class="lg-mnu-sec sticky">
+                <div class="container">
+                    <div class="logo"><a href="index.html" title="Logo" itemprop="url"><img src="assets/images/logo.png" alt="logo.png" itemprop="image"></a></div><!-- Logo -->
+                    <nav>
+                        <div>
+                            <ul>
+                                <li class = "menu-item-has-children"><a class="brd-rd3" href="index.html" title="" itemprop="url">Home <i ></i></a>
+									
+								</li>
+                                <li><a href="Dashboard.html" title="" itemprop="url">Dashboard</a></li>                                   
+								<li><a href="about.html" title="" itemprop="url">About Us</a></li>
+								<li><a href="campaign.html" title="" itemprop="url">Campaigns</a></li>
+                                <li><a href="contact.html" title="" itemprop="url">Contact</a></li>
+                            </ul>
+
+                        </div>
+                    </nav>
+                </div>
+            </div><!-- Logo Menu Sec -->
+        </header><!-- Header -->
+        <div class="rspn-hdr">
+            <div class="rspn-mdbr">
+                <ul class="rspn-scil">
+                    <li><a href="#" title="Twitter" itemprop="url" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" title="Facebook" itemprop="url" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" title="Linkedin" itemprop="url" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#" title="Google Plus" itemprop="url" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>                   
+                </ul>
+                <form class="rspn-srch">
+                    <input type="text" placeholder="Enter Your Keyword" />
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class="lg-mn">
+                <div class="logo"><a href="index.html" title="Logo" itemprop="url"><img src="assets/images/logo2.png" alt="logo2.png" itemprop="image"></a></div>
+                <div class="rspn-cnt">
+                    <span><i class="fas fa-envelope theme-clr"></i><a href="#" title="" itemprop="url">info@example.com</a></span>
+                    <span><i class="flaticon-telephone theme-clr"></i>+(00) 123-345-11</span>
+                </div>
+                <span class="rspn-mnu-btn brd-rd5"><i class="fa fa-list-ul"></i></span>
+            </div>
+            <div class="rsnp-mnu">
+                <span class="rspn-mnu-cls"><i class="fa fa-times"></i></span>
+                <ul>
+                    <li><a href="index.html" title="" itemprop="url">Home</a></li>
+                    <li class="menu-item-has-children"><a href="#" title="" itemprop="url">Blog</a>
+                        <ul>
+                            <li><a href="blog.html" title="" itemprop="url">Our Blog</a></li>
+                            <li><a href="blog-detail.html" title="" itemprop="url">Blog Detail</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="#" title="" itemprop="url">Pages</a>
+                        <ul>
+                            <li><a href="campaign.html" title="" itemprop="url">Campaign</a></li>
+                            <li><a href="service.html" title="" itemprop="url">Services</a></li>
+                            <li><a href="team.html" title="" itemprop="url">Team</a></li>
+                            <li><a href="operation-videos.html" title="" itemprop="url">Operation Videos</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children"><a href="#" title="" itemprop="url">Events</a>
+                        <ul>
+                            <li><a href="events.html" title="" itemprop="url">Our Events</a></li>
+                            <li><a href="event-detail.html" title="" itemprop="url">Event Detail</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html" title="" itemprop="url">About</a></li>
+                    <li><a href="contact.html" title="" itemprop="url">Contact</a></li>
+                </ul>
+            </div>
+        </div><!-- Responsive Header -->
+        <section>
+            <div class="gap black-layer opc8 overlap144">
+                <div class="fixed-bg2" style="background-image: url(assets/images/pg-tp-bg.jpg);"></div>
+                <div class="container">
+                    <div class="pg-tp-wrp">
+                        <h1 itemprop="headline">Dashboard</h1>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html" title="" itemprop="url">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div><!-- Page Top Wrap -->
+                    <ol class="tab">
+                        <li class="tab-content" id="tabSensor1"><a href="Dashboard.html" title="" itemprop="url">Sensor 1</a></li>
+                        <li class="tab-content active" id="tabSensor2"><a href="Dashboard2.html" title="" itemprop="url">Sensor 2</a></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="page-wrapper mdc-toolbar-fixed-adjust">
+                <div class="chart-content">
+                    <!-- Tab Switching -->
+                    <div class="page-wrapper mdc-toolbar-fixed-adjust" id="contentSensor1">
+                        <div class="chart-content">
+                            <div class="data-row">
+                            <div class="statistics-card">
+                                <div class="card-data">
+                                <div class="card-body">
+                                    <p class="statistics-title">Humidity</p>
+                                    <h3 class="rate-percentage" id="humidity">--</h3>
+                                </div>
+                                </div>
+                            </div>
+                            
+                            <div class="statistics-card">
+                                <div class="card-data">
+                                <div class="card-body">
+                                    <p class="statistics-title">Temperature</p>
+                                    <h3 class="rate-percentage" id="temperature">--</h3>
+                                </div>
+                                </div>
+                            </div>
+                            
+                            <div class="statistics-card">
+                                <div class="card-data">
+                                <div class="card-body">
+                                    <p class="statistics-title">Gas Level</p>
+                                    <h3 class="rate-percentage" id="gas-level">--</h3>
+                                </div>
+                                </div>
+                            </div>
+                            
+                            <div class="statistics-card">
+                                <div class="card-data">
+                                <div class="card-body">
+                                    <p class="statistics-title">Atmospheric Pressure</p>
+                                    <h3 class="rate-percentage" id="pressure">--</h3>
+                                </div>
+                                </div>
+                            </div>
+                            
+                            <div class="statistics-card">
+                                <div class="card-data">
+                                <div class="card-body">
+                                    <p class="statistics-title">Altitude</p>
+                                    <h3 class="rate-percentage" id="altitude">--</h3>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+
+
+
+                            <div class="content-wrapper">
+                                <div class="row">
+                                    <div class="col-lg-6 grid-margin stretch-card">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Humidity</h4>
+                                                <canvas id="lineChart1"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 grid-margin stretch-card">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Temperature</h4>
+                                                <canvas id="lineChart2"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 grid-margin stretch-card">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Gas-Level</h4>
+                                                <canvas id="lineChart3"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Pressure</h4>
+                                                <canvas id="lineChart4"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 grid-margin stretch-card">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title">Altitude</h4>
+                                                <canvas id="lineChart5"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                            
+
+                        <div id="locationContainer" class="hidden">
+                            <!-- <div class="close-btn" onclick="closeLocation()">X</div> -->
+                            <div id="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d388.0667097480468!2d85.32979206290516!3d27.706040531523634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190a0b741119%3A0xf18b0856d576a397!2sP84J%2B94V%2C%20Mahakavi%20Marg%2C%20Kathmandu%2044605%2C%20Nepal!5e1!3m2!1sen!2snl!4v1690183005803!5m2!1sen!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                </div>
+                        </div>
+
+
+    
+                </div>
+
+
+                <!-- Content for Sensor 2 (Hiding it by default) -->
+                <!-- <div class="page-wrapper mdc-toolbar-fixed-adjust" id="contentSensor2" style="display: none;">
+                                            <div class="chart-content">
+                                                <div class="data-row">
+                                                    <div class="statistics-card">
+                                                        <div class="card-data">
+                                                        <div class="card-body">
+                                                            <p class="statistics-title">Humidity</p>
+                                                            <h3 class="rate-percentage" id="humidity">--</h3>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="statistics-card">
+                                                        <div class="card-data">
+                                                        <div class="card-body">
+                                                            <p class="statistics-title">Temperature</p>
+                                                            <h3 class="rate-percentage" id="temperature">--</h3>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="statistics-card">
+                                                        <div class="card-data">
+                                                        <div class="card-body">
+                                                            <p class="statistics-title">Gas Level</p>
+                                                            <h3 class="rate-percentage" id="gas-level">--</h3>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="statistics-card">
+                                                        <div class="card-data">
+                                                        <div class="card-body">
+                                                            <p class="statistics-title">Atmospheric Pressure</p>
+                                                            <h3 class="rate-percentage" id="pressure">--</h3>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="statistics-card">
+                                                        <div class="card-data">
+                                                        <div class="card-body">
+                                                            <p class="statistics-title">Altitude</p>
+                                                            <h3 class="rate-percentage" id="altitude">--</h3>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                        
+                        
+                        
+                                                    <div class="content-wrapper">
+                                                        <div class="row">
+                                                            <div class="col-lg-6 grid-margin stretch-card">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Line chart for Field 1</h4>
+                                                                        <canvas id="lineChart1"></canvas>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 grid-margin stretch-card">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Line chart for Field 2</h4>
+                                                                        <canvas id="lineChart2"></canvas>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 grid-margin stretch-card">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Line chart for Field 3</h4>
+                                                                        <canvas id="lineChart3"></canvas>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Line chart for Field 4</h4>
+                                                                        <canvas id="lineChart4"></canvas>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-6 grid-margin stretch-card">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <h4 class="card-title">Line chart for Field 5</h4>
+                                                                        <canvas id="lineChart5"></canvas>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    
+                                                <div class="content-wrapper">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 grid-margin stretch-card">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                            <h4 class="card-title">Line chart</h4>
+                                                            <canvas id="lineChart"></canvas>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        <div class="col-lg-6 grid-margin stretch-card">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                            <h4 class="card-title">Bar chart</h4>
+                                                            <canvas id="barChart"></canvas>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6 grid-margin stretch-card">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                            <h4 class="card-title">Area chart</h4>
+                                                            <canvas id="areaChart"></canvas>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        <div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                            <h4 class="card-title">Scatter chart</h4>
+                                                            <canvas id="scatterChart"></canvas>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                    
+                                                <div id="locationContainer" class="hidden">
+                                                    <!-- <div class="close-btn" onclick="closeLocation()">X</div> 
+                                                    <div id="map">
+                                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d388.0667097480468!2d85.32979206290516!3d27.706040531523634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190a0b741119%3A0xf18b0856d576a397!2sP84J%2B94V%2C%20Mahakavi%20Marg%2C%20Kathmandu%2044605%2C%20Nepal!5e1!3m2!1sen!2snl!4v1690183005803!5m2!1sen!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                </div>
+                                                </div>
+                    
+                    
+                    
+                </div> -->
+            </div>
+        </section>
+
+                        
+
+        
+        <footer>
+            <div class="gap drk-bg">
+                <div class="container">
+                    <div class="ftr-dta remove-ext5">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-12 col-lg-5">
+                                
+                            </div>
+                            <dixv class="col-md-7 col-sm-12 col-lg-7">
+                                <div class="row">
+                                    <div class="col-md-7 col-sm-7 col-lg-7">
+                                        
+                                    <div class="col-md-5 col-sm-5 col-lg-5">
+                                        <div class="wdgt-bx">
+                                            <h5 itemprop="headline">Created By BlazeAlert</h5>
+                                            
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- Footer Data -->
+                </div>
+            </div>
+        </footer><!-- Footer -->
+        
+    
+    </main><!-- Main Wrapper -->
+
+
+
+    <!-- Include the separate JavaScript file -->
+    <script src="assets/js/tabSwitch.js"></script>
+    <script src="assets/js/lineGraph2.js"></script>
+    <script src="assets/js/location.js"></script>
+    
+    <!--  -->
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/downCount.js"></script>
+    <script src="assets/js/counterup.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/styleswitcher.js"></script>
+    <script src="assets/js/fancybox.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4XGd9qpQIEkbfL6QpR6qk2jQ9S9_5Uww"></script>
+    <script src="assets/js/google-map-int.js"></script>
+    <script src="assets/js/custom-scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+    <!-- Include Moment.js library (required for date adapter) -->
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <!-- Include the Chart.js Moment.js date adapter -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Include Leaflet.js library -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> -->
+
+</body>	
+</html>

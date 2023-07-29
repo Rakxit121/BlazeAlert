@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Channel Location on Map</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Include Leaflet.js library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Channel Location</h4>
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // API key and endpoint URL
+        const apiKey = "U7GLNV6TVILHOZST";
+const channelId = "2206646";
+        const apiUrl = `https://api.thingspeak.com/channels/${channelId}.json?api_key=${apiKey}`;
+
+        // Function to fetch channel details from ThingSpeak
+        async function fetchChannelDetails() {
+            try {
+                const response = await axios.get(apiUrl);
+                const channel = response.data;
+                return channel;
+            } catch (error) {
+                console.error('Error fetching channel details:', error);
+                return null;
+            }
+        }
+
+        // Function to display channel location on the map using Leaflet.js
+        function displayChannelLocationOnMap(latitude, longitude) {
+            const map = L.map('map').setView([latitude, longitude], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([latitude, longitude]).addTo(map)
+                .bindPopup('Channel Location')
+                .openPopup();
+        }
+
+        // Fetch channel details and display channel location on the map when DOM content is loaded
+        document.addEventListener('DOMContentLoaded', async function () {
+            const channel = await fetchChannelDetails();
+            if (channel && channel.latitude && channel.longitude) {
+                displayChannelLocationOnMap(channel.latitude, channel.longitude);
+            } else {
+                document.getElementById('map').textContent = 'Channel location not available.';
+            }
+        });
+    </script>
+</body>
+</html>

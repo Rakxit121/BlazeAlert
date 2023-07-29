@@ -67,7 +67,7 @@ void loop() {
   }
 
   // Print data to Serial monitor
-  Serial.print("#");
+//  Serial.print("#");
   Serial.print(hum);
   Serial.print(",");
   Serial.print(temp);
@@ -76,7 +76,7 @@ void loop() {
   Serial.print(",");
   Serial.print(pressure);
   Serial.print(",");
-  Serial.println(altitude);
+  Serial.print(altitude);
   Serial.print(",");
   Serial.print(date);
   Serial.print(",");
@@ -86,5 +86,5 @@ void loop() {
   Serial.print(",");
   Serial.println(longitude, 6);
 
-  delay(1000); // Delay for 1 second before reading again
+  delay(2000); // Delay for 1 second before reading again
 }

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThingSpeak Data Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+
+    /* Reset some default styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles for all elements */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Responsive styles */
+@media (max-width: 890px) {
+  /* Adjust the layout for smaller screens */
+  .col-lg-6 {
+    width: 100%;
+  }
+
+  .grid-margin-lg-0 {
+    margin-bottom: 20px;
+  }
+  .row{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Specific styles for the elements */
+.chart-content {
+  padding: 10px;
+}
+
+.content-wrapper {
+  margin: 0 auto;
+  /* max-width: 1200px; */
+}
+
+.row {
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* margin: -15px; */
+}
+
+.col-lg-6 {
+  flex-basis: 50%;
+  padding: 15px;
+}
+
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+h4.card-title {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+canvas {
+  /* Style the canvas element for your charts here */
+  width: 100%;
+  height: 300px; /* Set an appropriate height for your charts */
+}
+
+
+
+
+/* for data-row */
+
+
+/* Specific styles for the data row container */
+.data-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Specific styles for the statistics card */
+.statistics-card {
+  text-align: center;
+  padding: 10px;
+}
+
+/* Specific styles for the card */
+.card-data {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100px;
+}
+
+/* Specific styles for the card body */
+.card-body {
+  padding: 20px;
+}
+
+/* Specific styles for the statistics title */
+.statistics-title {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Specific styles for the rate percentage value */
+.rate-percentage {
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Additional styles for the text indicators (e.g., +0.1%, -0.5%) */
+.text-success,
+.text-danger {
+  color: #555;
+  font-size: 12px;
+}
+
+.text-success i::before {
+  content: "\f106"; /* Checkmark icon */
+  color: green;
+  margin-right: 5px;
+}
+
+.text-danger i::before {
+  content: "\f107"; /* Cross icon */
+  color: red;
+  margin-right: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  /* Adjust the layout for smaller screens */
+  .data-row {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+  </style>
+
+</head>
+<body>
+
+
+
+  <div class="chart-content">
+    <div class="data-row">
+      <div class="statistics-card">
+        <div class="card-data">
+          <div class="card-body">
+            <p class="statistics-title">Humidity</p>
+            <h3 class="rate-percentage" id="humidity">--</h3>
+          </div>
+        </div>
+      </div>
+    
+      <div class="statistics-card">
+        <div class="card-data">
+          <div class="card-body">
+            <p class="statistics-title">Temperature</p>
+            <h3 class="rate-percentage" id="temperature">--</h3>
+          </div>
+        </div>
+      </div>
+    
+      <div class="statistics-card">
+        <div class="card-data">
+          <div class="card-body">
+            <p class="statistics-title">Gas Level</p>
+            <h3 class="rate-percentage" id="gas-level">--</h3>
+          </div>
+        </div>
+      </div>
+    
+      <div class="statistics-card">
+        <div class="card-data">
+          <div class="card-body">
+            <p class="statistics-title">Atmospheric Pressure</p>
+            <h3 class="rate-percentage" id="pressure">--</h3>
+          </div>
+        </div>
+      </div>
+    
+      <div class="statistics-card">
+        <div class="card-data">
+          <div class="card-body">
+            <p class="statistics-title">Altitude</p>
+            <h3 class="rate-percentage" id="altitude">--</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Line chart</h4>
+              <canvas id="lineChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Bar chart</h4>
+              <canvas id="barChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Area chart</h4>
+              <canvas id="areaChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 grid-margin grid-margin-lg-0 stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Scatter chart</h4>
+              <canvas id="scatterChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+
+    <script>
+        // Configure ThingSpeak channel and field details
+        const channelID = '2206646';
+        const fieldID = '1';
+
+
+      // Function to fetch data from ThingSpeak API
+      async function fetchDataFromThingSpeak(channelId, numPoints) {
+          const url = `https://api.thingspeak.com/channels/${channelId}/feeds.json?results=${numPoints}`;
+          const response = await fetch(url);
+          const data = await response.json();
+          return data.feeds;
+      }
+
+      // Function to extract labels and data from fetched ThingSpeak data
+      function extractDataFromThingSpeakData(feeds) {
+          const labels = feeds.map((feed) => feed.created_at);
+          const data = feeds.map((feed) => parseFloat(feed.field1));
+          return { labels, data };
+      }
+
+      // Chart data
+      var options = {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          },
+          legend: {
+              display: false
+          },
+          elements: {
+              point: {
+                  radius: 0
+              }
+          }
+      };
+
+      // Rendering charts
+      document.addEventListener('DOMContentLoaded', async function () {
+          const channelId = '2206646'; // Replace with your actual ThingSpeak channel ID
+          const numPoints = 6; // Number of data points to retrieve
+
+          try {
+              // Fetch data from ThingSpeak API
+              const feeds = await fetchDataFromThingSpeak(channelId, numPoints);
+
+              // Extract labels and data from the fetched data
+              const { labels, data } = extractDataFromThingSpeakData(feeds);
+
+              // Create chart data object
+              var chartData = {
+                  labels: labels,
+                  datasets: [{
+                      label: 'Field 1 Data',
+                      data: data,
+                      borderColor: '#587ce4',
+                      borderWidth: 2,
+                      fill: false
+                  }]
+              };
+
+              // Get the canvas element and render the line chart
+              var lineChartCanvas = document.getElementById('lineChart').getContext('2d');
+              var lineChart = new Chart(lineChartCanvas, {
+                  type: 'line',
+                  data: chartData,
+                  options: options
+              });
+
+              // Create chart data object for bar chart
+              var barChartData = {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Field 1 Data',
+                        data: data,
+                        backgroundColor: '#587ce4',
+                        borderWidth: 2,
+                        fill: false
+                    }]
+                };
+
+                // Get the canvas element and render the bar chart
+                var barChartCanvas = document.getElementById('barChart').getContext('2d');
+                var barChart = new Chart(barChartCanvas, {
+                    type: 'bar',
+                    data: barChartData,
+                    options: options
+                });
+
+                // Create chart data object for area chart
+                var areaChartData = {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Field 1 Data',
+                        data: data,
+                        backgroundColor: 'rgba(88, 124, 228, 0.5)',
+                        borderColor: '#587ce4',
+                        borderWidth: 2,
+                        fill: true
+                    }]
+                };
+
+                // Get the canvas element and render the area chart
+                var areaChartCanvas = document.getElementById('areaChart').getContext('2d');
+                var areaChart = new Chart(areaChartCanvas, {
+                    type: 'line',
+                    data: areaChartData,
+                    options: options
+                });
+
+                // Create random data for scatter chart
+                var scatterChartData = {
+                    datasets: [{
+                        label: 'Scatter Dataset',
+                        data: Array.from({ length: numPoints }, () => ({
+                            x: Math.random() * 100,
+                            y: Math.random() * 100
+                        })),
+                        backgroundColor: 'rgba(88, 124, 228, 0.5)',
+                        borderColor: '#587ce4',
+                        borderWidth: 1
+                    }]
+                };
+
+                // Get the canvas element and render the scatter chart
+                var scatterChartCanvas = document.getElementById('scatterChart').getContext('2d');
+                var scatterChart = new Chart(scatterChartCanvas, {
+                    type: 'scatter',
+                    data: scatterChartData,
+                    options: options
+                });
+
+
+              // Add other chart renderings here for other charts
+          } catch (error) {
+              console.error('Error fetching data:', error);
+          }
+      });
+  </script>
+
+<script>
+  // Fetch data from the API or data source (replace 'your_api_url_here' with the actual API endpoint)
+  fetch('https://api.thingspeak.com/channels/2206646/feeds.json?results=2')
+    .then(response => response.json())
+    .then(data => {
+      // Get the latest feed from the data array
+      const latestFeed = data.feeds[data.feeds.length - 1];
+
+      // Update the HTML elements with the fetched data
+      document.getElementById('humidity').textContent = latestFeed.field1; // Humidity (field1)
+      document.getElementById('temperature').textContent = latestFeed.field2; // Temperature (field2)
+      document.getElementById('gas-level').textContent = latestFeed.field3; // Gas Level (field3)
+      document.getElementById('pressure').textContent = latestFeed.field4; // Atmospheric Pressure (field4)
+      document.getElementById('altitude').textContent = latestFeed.field5; // Altitude (field5)
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+
+
+#map {
+    height: 400px;
+  }
+
+      /* Reset some default styles */
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global styles for all elements */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 890px) {
+    /* Adjust the layout for smaller screens */
+    .col-lg-6 {
+      width: 100%;
+    }
+  
+    .grid-margin-lg-0 {
+      margin-bottom: 20px;
+    }
+    .row{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  /* Specific styles for the elements */
+  .chart-content {
+    padding: 10px;
+  }
+  
+  .content-wrapper {
+    margin: 0 auto;
+    /* max-width: 1200px; */
+  }
+  
+  .row {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* margin: -15px; */
+  }
+  
+  .col-lg-6 {
+    flex-basis: 50%;
+    padding: 15px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  h4.card-title {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  canvas {
+    /* Style the canvas element for your charts here */
+    width: 100%;
+    height: 300px; /* Set an appropriate height for your charts */
+  }
+  
+  
+  
+  
+  /* for data-row */
+  
+  
+  /* Specific styles for the data row container */
+  .data-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Specific styles for the statistics card */
+  .statistics-card {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Specific styles for the card */
+  .card-data {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    height: 100px;
+  }
+  
+  /* Specific styles for the card body */
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* Specific styles for the statistics title */
+  .statistics-title {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Specific styles for the rate percentage value */
+  .rate-percentage {
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Additional styles for the text indicators (e.g., +0.1%, -0.5%) */
+  .text-success,
+  .text-danger {
+    color: #555;
+    font-size: 12px;
+  }
+  
+  .text-success i::before {
+    content: "\f106"; /* Checkmark icon */
+    color: green;
+    margin-right: 5px;
+  }
+  
+  .text-danger i::before {
+    content: "\f107"; /* Cross icon */
+    color: red;
+    margin-right: 5px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    /* Adjust the layout for smaller screens */
+    .data-row {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+  
+
+
+
+
+/* Style for the button */
+#locationButton {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #587ce4;
+  color: #ffffff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#locationButton:hover {
+  background-color: #3e5bb5;
+}
+
+/* Style for the wide map container */
+#map {
+  width: 80%; /* Adjust the width to make it wider */
+  max-width: 1200px; /* Set a maximum width to limit the map size */
+  height: 400px; /* Optional: Set the height of the map container */
+  margin: 0 auto;
+}
+
+/* Optional: Add some padding to the map container */
+#map {
+  padding: 20px;
+}
+
+
+
+
+
+/* tab */
+
+.tab {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #f2f2f2; */
+  border-radius: 5px;
+}
+
+.tab-content {
+  padding: 5px 10px;
+  cursor: pointer;
+  border-right: 1px solid #ccc;
+}
+
+.tab-content:last-child {
+  border-right: none;
+}
+
+.tab-content.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.page-wrapper {
+  /* Add your existing styles for the wrapper */
+}
+
+.chart-content {
+  /* Add your existing styles for the chart content */
+}
+
+
+
+
+        /* Center the map */
+        .map-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+      }
+
+      /* Add a box shadow to the map container */
+      .map-container iframe {
+          border: 1px solid #cccccc;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive design for smaller screens */
+      @media (max-width: 576px) {
+          .map-container {
+              flex-direction: column;
+              align-items: center;
+          }
+      }

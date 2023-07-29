@@ -1,0 +1,76 @@
+ <section>
+            <div class="gap remove-gap">
+                <div class="container">
+                    <div class="sec-tl text-center">
+                        <span>Get upto date information from blogs and events</span>
+                        <h2 itemprop="headline">Our Blog & <span class ="theme-clr">News</span></h2>
+                    </div><!-- Sec Title -->
+                    <div class="blg-evnt-wrp">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="remove-ext5">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-lg-6">
+                                            <div class="blg-bx">
+                                                <div class="blg-thmb"><a href="blog-detail.html" title="" itemprop="url"><img src="assets/images/resources/blg-img1-1.jpg" alt="blg-img1-1.jpg" itemprop="image"></a></div>
+                                                <div class="blg-inf">
+                                                    <h6 itemprop="headline"><a href="blog-detail.html" title="" itemprop="url">Forest fire raging Nason Rural Municipality in Manang</a></h6>
+                                                    <ul class="pst-mta">
+                                                        <li><i class="far fa-calendar-alt"></i><a href="#" title="" itemprop="url">Jan 28, 2023</a></li>
+                                                        <li><i class="fas fa-user"></i><a href="#" title="" itemprop="url">Santosh Pokharel</a></li>
+                                                    </ul>
+                                                    <p itemprop="description">Chief District Officer (CDO) of Manang district, Bishnu Lamichhane, said that forest areas located in wards 5, 6, 7 and of Nason Rural Municipality have witnessed huge fires. </p>
+                                                    <a href="blog-detail.html" title="" itemprop="url">Read More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-lg-6">
+                                            <div class="blg-bx">
+                                                <div class="blg-thmb"><a href="blog-detail.html" title="" itemprop="url"><img src="assets/images/resources/blg-img1-2.jpg" alt="blg-img1-2.jpg" itemprop="image"></a></div>
+                                                <div class="blg-inf">
+                                                    <h6 itemprop="headline"><a href="blog-detail.html" title="" itemprop="url">Forest fires flare up in Nepal, air quality deteriorates</a></h6>
+                                                    <ul class="pst-mta">
+                                                        <li><i class="far fa-calendar-alt"></i><a href="#" title="" itemprop="url">April 26, 2023</a></li>
+                                                        <li><i class="fas fa-user"></i><a href="#" title="" itemprop="url">Saloni Murarka</a></li>
+                                                    </ul>
+                                                    <p itemprop="description">Members of Nepal's army try to control a fire on Sunday at Shivapuri National Park, overlooking Kathmandu, as forest fires have raged many areas in Nepal.</p>
+                                                    <a href="blog-detail.html" title="" itemprop="url">Read More</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-lg-6">
+                                <div class="evnt-wrp">
+                                    <div class="evnt-bx">
+                                        <span class="evnt-dat"><a class="theme-bg" href="#" title="" itemprop="url">18<i>May</i></a></span>
+                                        <div class="evnt-inf">
+                                            <h5 itemprop="headline"><a href="event-detail.html" title="" itemprop="url">Emergency Medical Services Tips</a></h5>
+                                            <ul class="pst-mta">
+                                                <li><i class="fas fa-map-marker-alt theme-clr"></i>R773+HHH Highway, Kakani 44900</li>
+                                                <li><i class="far fa-clock theme-clr"></i>03:00 pm - 10:00 pm</li>
+                                            </ul>
+                                            <p itemprop="description">Safety First: Prioritize personal safety and adhere to proper protective equipment, including fire-resistant clothing, helmets, goggles, and gloves. Follow established safety protocols and maintain clear communication channels with your team.</p>
+                                            <a class = "event-btn" href="event-detail.html" title="" itemprop="url">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="evnt-bx">
+                                        <span class="evnt-dat"><a class="theme-bg" href="#" title="" itemprop="url">21<i>May</i></a></span>
+                                        <div class="evnt-inf">
+                                            <h5 itemprop="headline"><a href="event-detail.html" title="" itemprop="url">Emergency Medical Services Tips</a></h5>
+                                            <ul class="pst-mta">
+                                                <li><i class="fas fa-map-marker-alt theme-clr"></i>Kanti Path, Kathmandu 44600</li>
+                                                <li><i class="far fa-clock theme-clr"></i>03:00 pm - 10:00 pm</li>
+                                            </ul>
+                                            <p itemprop="description">Maintain Hydration: Drink plenty of water to stay hydrated, as the heat and physical exertion can lead to dehydration. Avoid caffeinated or alcoholic beverages, as they can further dehydrate your body.</p>
+                                            <a class = "event-btn" href="event-detail.html" title="" itemprop="url">Read More</a>
+                                        </div>
+                                    </div>
+                                </div><!-- Event Wrap -->
+                            </div>
+                        </div>
+                    </div><!-- Blog & Events Wrap -->
+                </div>
+            </div>
+        </section>
