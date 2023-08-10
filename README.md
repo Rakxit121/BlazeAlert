@@ -3,8 +3,11 @@
 # Forest Fire Detection System using IoT Sensors
 
 
-![Project Image 1](/images/project-image1.jpg)
-![Project Image 2](/images/project-image2.jpg)
+![Concept page](https://github.com/Rakxit121/BlazeAlert/assets/89236284/fe5e9aee-d6ab-4581-a660-4170966f4087)
+
+![Circuit Diagram](https://github.com/Rakxit121/BlazeAlert/assets/89236284/ef872772-df37-4740-a16b-17955c6914d7)
+
+![Online Database Visualization](https://github.com/Rakxit121/BlazeAlert/assets/89236284/b9ba859a-bb86-4034-937e-2c35fb1e8c84)
 
 This project aims to develop a forest fire detection system using IoT sensors. The system enables early detection of forest fires in Nepal, facilitating timely action and mitigation efforts.
 
@@ -22,11 +25,11 @@ In Nepal, forest fires pose a significant threat to the environment, wildlife, a
 
 ## Documentation
 
-For detailed documentation on the forest fire detection system, please refer to the [Documentation](documentation.md).
+For detailed documentation on the forest fire detection system, please refer to the [Documentation](https://softwaricacollege-my.sharepoint.com/personal/210334_softwarica_edu_np/Documents/BlazeAlert-Final_main.pdf).
 
 ## Excel
 
-To access the Excel spreadsheet containing data on forest fire incidents, please click [here](excel-sheet.xlsx).
+To access the Excel spreadsheet containing data on forest fire incidents, please click [here](https://docs.google.com/spreadsheets/d/14Wj2MHkF9N7NCq8F1MJVDxu0QbAyILTXz3Y_d4Y3yTk/edit?usp=sharing).
 
 ## Trello
 
@@ -34,7 +37,7 @@ To track the progress and tasks related to this project, we are using Trello. Yo
 
 ## YouTube
 
-We have created a YouTube channel where you can find videos related to the forest fire detection system. Visit our YouTube channel [here](https://www.youtube.com/forest-fire-detection).
+We have created a YouTube channel where you can find videos related to the forest fire detection system. Visit our YouTube channel [here](https://youtu.be/qWS-3rkB6x4).
 
 ## Installation
 
